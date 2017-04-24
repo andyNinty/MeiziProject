@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.andy.bottomnavbar.MainActivity">
+    tools:context="com.example.andy.meizi.MainActivity">
 
     <include layout="@layout/layout_toolbar"/>
 
