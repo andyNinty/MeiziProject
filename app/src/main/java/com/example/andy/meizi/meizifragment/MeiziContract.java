@@ -1,14 +1,10 @@
 package com.example.andy.meizi.meizifragment;
 
-import android.content.Context;
-
 import com.example.andy.meizi.base.BasePresenter;
 import com.example.andy.meizi.base.BaseView;
 import com.example.andy.meizi.meizifragment.model.Meizi;
 
 import java.util.List;
-
-import rx.Subscription;
 
 /**
  * com.example.andy.bottomnavbar.meizifragment
@@ -21,12 +17,7 @@ public interface MeiziContract {
      * 界面逻辑的处理
      */
     interface View extends BaseView<MeiziPresenter> {
-        Context getCtx();
-
         void showMeizi(List<Meizi> meizis);
-
-        void setSubscription(Subscription s);
-
 
     }
 

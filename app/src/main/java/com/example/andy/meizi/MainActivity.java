@@ -11,6 +11,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import com.example.andy.meizi.articlefragment.ArticleFragment;
+import com.example.andy.meizi.articlefragment.ArticlePresenter;
 import com.example.andy.meizi.meizifragment.MeiziFragment;
 import com.example.andy.meizi.meizifragment.MeiziPresenter;
 
@@ -63,17 +65,20 @@ public class MainActivity extends AppCompatActivity {
     private void initView() {
         toolbar.setTitle("");
         setSupportActionBar(toolbar);
+
         MeiziFragment meiziFragment = new MeiziFragment();
+        ArticleFragment articleFragment = new ArticleFragment();
         mViewPager = (ViewPager) findViewById(R.id.viewpage);
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         if (mFragments == null) {
             mFragments = new ArrayList<>();
         }
         adapter.addFragment(meiziFragment);
-        adapter.addFragment(new DashBoardFragment());
+        adapter.addFragment(articleFragment);
         adapter.addFragment(new NotificationFragment());
 
         new MeiziPresenter(meiziFragment);
+        new ArticlePresenter(articleFragment);
 
         mViewPager.setAdapter(adapter);
         mViewPager.setOffscreenPageLimit(mFragments.size());
@@ -120,6 +125,12 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * 将viewpager滑动的item 和BottomNavigationView 底部的item绑定
+     *
+     * @param item
+     * @return
+     */
     private int PagerItem2NavItem(int item) {
         switch (item) {
             case 0:

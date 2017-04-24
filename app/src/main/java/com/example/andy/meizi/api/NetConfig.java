@@ -7,4 +7,5 @@ package com.example.andy.meizi.api;
 
 public class NetConfig {
     public static final String MEI_ZI_URL = "http://gank.io/api/";
+    public static final String ONE_ARTICLE_URL = "https://interface.meiriyiwen.com/";
 }

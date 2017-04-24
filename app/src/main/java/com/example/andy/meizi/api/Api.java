@@ -13,6 +13,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class Api {
 
     MeiziApi meiziApi = null;
+    ArticleApi articleApi = null;
 
     Api() {
         Retrofit retrofit = new Retrofit.Builder()
@@ -22,10 +23,21 @@ public class Api {
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .build();
         meiziApi = retrofit.create(MeiziApi.class);
+
+        Retrofit retrofit1 = new Retrofit.Builder()
+                .client(new OkHttpClient())
+                .baseUrl(NetConfig.ONE_ARTICLE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .build();
+        articleApi = retrofit1.create(ArticleApi.class);
     }
 
     public MeiziApi getMeiziApi() {
         return meiziApi;
     }
 
+    public ArticleApi getArticleApi() {
+        return articleApi;
+    }
 }
