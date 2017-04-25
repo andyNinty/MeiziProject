@@ -7,15 +7,20 @@ import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.andy.meizi.R;
+import com.example.andy.meizi.articlefragment.model.Article;
 import com.example.andy.meizi.articlefragment.model.ArticleResponse;
 import com.example.andy.meizi.base.BaseFragment;
 
+import java.util.List;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import rx.Subscription;
 
 /**
@@ -31,6 +36,8 @@ public class ArticleFragment extends BaseFragment implements ArticleContract.Vie
     TextView tvAuthor;
     @Bind(R.id.tv_content)
     TextView tvContent;
+    @Bind(R.id.btn_like)
+    Button btnLike;
     private ArticleContract.ArticlePresenter mPresenter;
 
     @Nullable
@@ -46,6 +53,17 @@ public class ArticleFragment extends BaseFragment implements ArticleContract.Vie
         super.onResume();
         mPresenter.init();
         mPresenter.reqArticleData();
+        mPresenter.isLikeSuccess();
+    }
+
+    @OnClick(R.id.btn_like)
+    void likeBtnClick() {
+        if (btnLike.getText().equals("收藏")) {
+            mPresenter.save2DB();
+        } else {
+            mPresenter.delFromDB();
+
+        }
     }
 
     @Override
@@ -76,6 +94,21 @@ public class ArticleFragment extends BaseFragment implements ArticleContract.Vie
         tvAuthor.setText(response.getAuthor());
         tvContent.setText(Html.fromHtml(response.getContent()));
     }
+
+    @Override
+    public void showArticleFromDB(List<Article> articles) {
+
+    }
+
+    @Override
+    public void setBtnState(boolean isSuccess) {
+        if (isSuccess) {
+            btnLike.setText("已收藏");
+        } else {
+            btnLike.setText("收藏");
+        }
+    }
+
 
     @Override
     public void onDestroyView() {

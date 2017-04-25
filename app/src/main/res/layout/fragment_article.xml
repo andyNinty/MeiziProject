@@ -39,14 +39,14 @@
                 android:text="content" />
 
             <Button
-                android:id="@+id/iv_like"
+                android:id="@+id/btn_like"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:layout_marginBottom="32dp"
-                android:clickable="true"
-                android:text="√收藏"
                 android:layout_gravity="center_horizontal"
-                android:background="@drawable/button_background" />
+                android:layout_marginBottom="32dp"
+                android:background="@drawable/selector_like"
+                android:clickable="true"
+                android:text="收藏" />
         </LinearLayout>
 
     </ScrollView>

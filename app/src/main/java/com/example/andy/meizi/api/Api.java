@@ -12,8 +12,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Api {
 
-    MeiziApi meiziApi = null;
-    ArticleApi articleApi = null;
+    private MeiziApi meiziApi = null;
+    private ArticleApi articleApi = null;
 
     Api() {
         Retrofit retrofit = new Retrofit.Builder()
