@@ -5,7 +5,7 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
 /**
- * com.example.andy.bottomnavbar.util
+ * 压缩到事件链中去
  * Created by andy on 17-4-21.
  */
 

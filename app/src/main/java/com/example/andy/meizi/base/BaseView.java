@@ -7,6 +7,7 @@ import rx.Subscription;
 /**
  * baseView 绑定presenter
  * 用来处理每一个view都会执行的方法,比如显示toast等
+ * 可以根据自己的项目需求进行修改
  * Created by andy on 17-4-21.
  */
 

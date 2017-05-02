@@ -57,6 +57,8 @@ public class ArticlePresenter implements ArticleContract.ArticlePresenter {
     @Override
     public void save2DB() {
         //这里的收藏不涉及服务器 就是简单的保存到本地的数据库中
+        //想了想 这里只是为了搞明白DBFlow的使用 实际开发中收藏还是要和服务器结合 这样效果才会比较好
+        //这里只是用作简单Demo使用
         ArticleModel articleModel = new ArticleModel();
         articleModel.setId(mContent.getWc());
         articleModel.setAuthor(mContent.getAuthor());

@@ -7,7 +7,7 @@ import com.example.andy.meizi.meizifragment.model.Meizi;
 import java.util.List;
 
 /**
- * com.example.andy.bottomnavbar.meizifragment
+ * 将view层的接口和presenter层的接口管理起来
  * Created by andy on 17-4-21.
  */
 

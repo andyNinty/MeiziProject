@@ -8,7 +8,7 @@ import com.example.andy.meizi.base.BaseView;
 import java.util.List;
 
 /**
- * com.example.andy.meizi.articlefragment
+ * 有新需求只需要在里面添加接口即可
  * Created by andy on 17-4-24.
  */
 

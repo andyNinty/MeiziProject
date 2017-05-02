@@ -24,13 +24,12 @@ public class Api {
                 .build();
         meiziApi = retrofit.create(MeiziApi.class);
 
-        Retrofit retrofit1 = new Retrofit.Builder()
+        articleApi = new Retrofit.Builder()
                 .client(new OkHttpClient())
                 .baseUrl(NetConfig.ONE_ARTICLE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
-                .build();
-        articleApi = retrofit1.create(ArticleApi.class);
+                .build().create(ArticleApi.class);
     }
 
     public MeiziApi getMeiziApi() {
