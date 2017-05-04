@@ -24,7 +24,7 @@ import butterknife.ButterKnife;
  */
 
 public class MeiziAdapter extends RecyclerView.Adapter<MeiziAdapter.ViewHolder> {
-    List<Meizi> meizis = new ArrayList<>();
+    private List<Meizi> meizis = new ArrayList<>();
     private Context context;
 
 
@@ -57,7 +57,7 @@ public class MeiziAdapter extends RecyclerView.Adapter<MeiziAdapter.ViewHolder> 
         @Bind(R.id.tv_time)
         TextView tvTime;
 
-        public ViewHolder(View itemView) {
+        private ViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
         }

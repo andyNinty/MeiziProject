@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
 
     private class ViewPagerAdapter extends FragmentStatePagerAdapter {
 
-        public ViewPagerAdapter(FragmentManager fm) {
+        private ViewPagerAdapter(FragmentManager fm) {
             super(fm);
         }
 
@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
             return mFragments.size();
         }
 
-        public void addFragment(Fragment fragment) {
+        private void addFragment(Fragment fragment) {
             mFragments.add(fragment);
         }
     }
@@ -128,8 +128,8 @@ public class MainActivity extends AppCompatActivity {
     /**
      * 将viewpager滑动的item 和BottomNavigationView 底部的item绑定
      *
-     * @param item
-     * @return
+     * @param item viewpager item
+     * @return item
      */
     private int PagerItem2NavItem(int item) {
         switch (item) {
